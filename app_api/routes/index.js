@@ -1,18 +1,12 @@
 var express = require('express');
 var router = express.Router();
-// var ctrlLocations = require('../controllers/locations');
-// var ctrlReviews = require('../controllers/reviews');
+var controllerFood = require('../controllers/food');
 
-// router.get('/locations', ctrlLocations.locationsListByDistance);
-// router.post('/locations', ctrlLocations.locationsCreate);
-// router.get('/locations/:locationid', ctrlLocations.locationsReadOne);
-// router.put('/locations/:locationid', ctrlLocations.locationsUpdateOne);
-// router.delete('/locations/:locationid', ctrlLocations.locationsDeleteOne);
+router.post('/food', controllerFood.post_food);
+router.delete('/food/:id', controllerFood.delete_food);
+router.put('/food/:id', controllerFood.put_food);
 
-// // reviews
-// router.post('/locations/:locationid/reviews', ctrlReviews.reviewsCreate);
-// router.get('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsReadOne);
-// router.put('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsUpdateOne);
-// router.delete('/locations/:locationid/reviews/:reviewid', ctrlReviews.reviewsDeleteOne);
+router.get('/food', controllerFood.get_food);
+router.get('/food/:id', controllerFood.foodById);
 
 module.exports = router;
